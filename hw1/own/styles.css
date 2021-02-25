@@ -62,9 +62,9 @@ body {
     background-image:url( 'images/bkgnd.jpg' );
     background-repeat:repeat;
 }
+
 .button img, #volIcon img{
     width:32px;
-    margin-left: 8px;
     margin-top: 4px;
 }
 #albumCover img{
@@ -114,7 +114,7 @@ body {
     margin-left: 10px;
 }
 #controls div{
-    display: table-cell;
+    display:inline-block;
     vertical-align: middle;
 }
 #volSlider {
