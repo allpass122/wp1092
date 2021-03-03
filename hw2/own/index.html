@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="styles.css" rel="stylesheet" type="text/css">
-        <meta charset="utf-8">
         <title>Image Viewer</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="styles.css"
+        />
     </head>
     <body>
-        <div id="container" >
-            <H1 class="Description"> Image Viewer</H1>
-            <div id="main">
-                <button class="button" id="backBtn"> <img src="images/back.png"> </button>
-                <div id="display_wrapper">
-                    <div id="picture"> 
-                        <img id="img" src="https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/9180-484083125.jpg">
-                     </div>
+        <!-- Try to implement an HTML that looks like the reference example:
+        ./images/screenshot.png  -->
+        <!-- Please use the class names and IDs as defined in styles.css
+         so that the outlook can be the same as the reference. -->
+         <div class="image-viewer__container" id="container" >
+            <h1 class="image-viewer__title"> Image Viewer</h1>
+            <div class="image-viewer__main " id="main">
+                <button class="image-viewer__button" id="backBtn"> <img src="images/back.png"> </button>
+                <div class="image-viewer__display">
+                <div class="image-viewer__display-source-wrapper" id="display_wrapper">
+                    <img id="display" src="https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/9180-484083125.jpg">
                 </div>
-                <button class="button" id="nextBtn"> <img src="images/next.png"> </button>
-                <h5 id="source"> https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/9180-484083125.jpg </h5>
+                </div>
+                <button class="image-viewer__button" id="nextBtn"> <img src="images/next.png"> </button>
             </div>
+            <h2 id="imgName"> Nami </h2>
+            <h5 id="source"> https://ami.animecharactersdatabase.com/uploads/chars/thumbs/200/9180-484083125.jpg </h5>
         </div>
-        <script src="scripts/main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>

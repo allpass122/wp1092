@@ -1,36 +1,111 @@
+html,
 body {
-    background-color:black ;
-    background-repeat:repeat;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: #f8f1e5;
 }
-#container{
-    background-color:antiquewhite;
-    opacity: .9;
-    width: 1024px;
-    height: 768px;
-    border-radius: 8px;
-    padding: 5px;
-    margin: 0 auto;
-    color:darkred;
-    font-family: monospace, cursive, fantasy;
-    font-size: 30px;
-    border:2px solid black;
-    text-align:center;
+
+.image-viewer__container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
 }
-#main{
-    height: 500px;
+
+.image-viewer__title {
+	font-size: 5rem;
+	font-weight: 600;
+	color: #615dec;
+	margin: 0;
+	margin-top: 2rem;
 }
-#main div{
+
+.image-viewer__main {
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+	align-items: center;
+	margin: auto;
+}
+.image-viewer__main div{
     display: inline-block;
     vertical-align: middle;
 }
-#picture img{
-    width: 400px;
+
+.image-viewer__button {
+	display: inline;
+	background: none;
+	border: none;
+	border-radius: 50%;
 }
-.button img{
-    width:40px; 
+
+.image-viewer__button img {
+	width: 80px;
+	height: 80px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	cursor: pointer;
 }
-#source{
-    width: 1000px;
-    color: black;
+
+.image-viewer__button img:hover {
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+.image-viewer__button:focus {
+	outline: none;
+}
+/*
+.image-viewer__display {
+	position: relative;
+	padding: 15px;
+	margin: 3rem;
+	max-width: 80rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: 0.6rem;
+}
+
+.image-viewer__display-source-wrapper {
+	font-size: 12px;
+	left: 50%;
+	margin-right: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100em;
+	text-align: center;
+	bottom: 0;
+}
+*/
+#display {
+	object-fit: contain;
+	width: 400px;
+}
+
+#source {
+	display: block;
+	color: black;
     word-break: break-all;
+}
+
+.disabled {
+	opacity: 0.2;
+}
+.disabled img {
+	width: 80px;
+	height: 80px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	cursor: not-allowed;
+}
+.disabled:hover {
+	border-color: transparent !important;
+	cursor: not-allowed;
+}
+#imgName{
+    color:coral ;
+    font-size: 40px;
 }
