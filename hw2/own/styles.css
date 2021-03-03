@@ -1,0 +1,36 @@
+body {
+    background-color:black ;
+    background-repeat:repeat;
+}
+#container{
+    background-color:antiquewhite;
+    opacity: .9;
+    width: 1024px;
+    height: 768px;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 0 auto;
+    color:darkred;
+    font-family: monospace, cursive, fantasy;
+    font-size: 30px;
+    border:2px solid black;
+    text-align:center;
+}
+#main{
+    height: 500px;
+}
+#main div{
+    display: inline-block;
+    vertical-align: middle;
+}
+#picture img{
+    width: 400px;
+}
+.button img{
+    width:40px; 
+}
+#source{
+    width: 1000px;
+    color: black;
+    word-break: break-all;
+}
