@@ -4,7 +4,9 @@ var cancel_button = document.getElementById("cancel-button");
 var comment_button = document.getElementById("comment-button");
 var div = document.getElementsByClassName("comment");
 var pdiv = document.getElementById("comment-group");
+var comment_num = document.getElementById("comment-num")
 var rec=""
+var cnt = Number(1)
 
 cancel_button.style.visibility="hidden"
 comment_button.style.visibility="hidden" 
@@ -53,5 +55,7 @@ comment_button.addEventListener(
         clone.childNodes[3].childNodes[3].textContent = rec
         console.log(clone.childNodes[3].childNodes[3].textContent)
         pdiv.appendChild(clone);
+        cnt += 1
+        comment_num.textContent=`${cnt}則留言`
     }
 );
