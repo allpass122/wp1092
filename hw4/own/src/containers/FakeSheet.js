@@ -84,6 +84,8 @@ function FakeSheet(props) {
         copy[i][j].r = i;
       }
     }
+    ColLast = -1;
+    RowLast = -1;
     setGrids(copy);
   };
   const subCol = () => {
@@ -104,6 +106,52 @@ function FakeSheet(props) {
         copy[i][j].r = i;
       }
     }
+    ColLast = -1;
+    RowLast = -1;
+    setGrids(copy);
+  };
+  const addRow = () => {
+    if (ColLast === -1 || RowLast === -1) return;
+    setRowNumber((pre) => pre + 1);
+    setFirst((pre) => pre + 1);
+    let copy = [...grids];
+
+    copy.splice(RowLast, 0, new Array(colNumber + 1));
+    for (var i = 0; i <= colNumber; i++) {
+      copy[RowLast][i] = { val: "", r: RowLast, c: i };
+    }
+
+    for (i = 1; i <= rowNumber + 1; i++) {
+      copy[i][0] = { val: i, r: i, c: 0 };
+    }
+    for (var i = 1; i <= colNumber; i++) {
+      for (var j = rowNumber + 1; j > RowLast; j--) {
+        copy[j][i].c = i;
+        copy[j][i].r = j;
+      }
+    }
+    ColLast = -1;
+    RowLast = -1;
+    setGrids(copy);
+  };
+  const subRow = () => {
+    if (ColLast === -1 || RowLast === -1) return;
+    setRowNumber((pre) => pre - 1);
+    setFirst((pre) => pre + 1);
+    let copy = [...grids];
+    copy.splice(RowLast, 1);
+
+    for (i = 1; i <= rowNumber - 1; i++) {
+      copy[i][0] = { val: i, r: i, c: 0 };
+    }
+    for (var i = 1; i <= colNumber; i++) {
+      for (var j = rowNumber - 1; j >= RowLast; j--) {
+        copy[j][i].c = i;
+        copy[j][i].r = j;
+      }
+    }
+    ColLast = -1;
+    RowLast = -1;
     setGrids(copy);
   };
   console.log(grids);
@@ -120,8 +168,12 @@ function FakeSheet(props) {
           </button>
         </div>
         <div id="sidebar_left">
-          <button className="button">+</button>
-          <button className="button">-</button>
+          <button className="button" onClick={addRow}>
+            +
+          </button>
+          <button className="button" onClick={subRow}>
+            -
+          </button>
         </div>
         <div id="content">
           <table className="table">
