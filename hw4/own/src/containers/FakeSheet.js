@@ -154,7 +154,7 @@ function FakeSheet(props) {
     RowLast = -1;
     setGrids(copy);
   };
-  console.log(grids);
+  //console.log(grids);
   return (
     <>
       <Header text="MySheet" />
