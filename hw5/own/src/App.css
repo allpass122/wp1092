@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.history {
+  font-size: 40px;
+  color: red;
+  background-color: pink;
+  font-weight: bold;
+  border: 2px dashed;
+  margin-bottom: 20px;
+}
+.log {
+  overflow-y: scroll;
+  max-height: 300px;
+}
