@@ -16,6 +16,12 @@ function App() {
   //   R: [],
   //   G: []
   // }
+
+  const [A, setA] = useState("");
+  const [B, setB] = useState("");
+  const [C, setC] = useState("");
+  const [D, setD] = useState("");
+
   const [data, setData] = useState({}); // all MRT station data
   const [current_station_id, setCurrentStationId] = useState("None"); // station clicked by cursor
   const [start_station, setStartStation] = useState(""); // station selected as the starting one
@@ -51,6 +57,14 @@ function App() {
     console.log("Begin getStation");
     getStations();
   }, []);
+
+  const click = (a, b, c, d) => {
+    setA(a);
+    setB(b);
+    setC(c);
+    setD(d);
+    console.log(`set ${a} ${b} ${c} ${d}`);
+  };
 
   if (!Object.keys(data).length) {
     return (
@@ -103,11 +117,11 @@ function App() {
         </div>
 
         <div className="route-graph-info-container">
-          <RouteGraph route_data={data[Object.keys(data)[0]]} />{" "}
+          <RouteGraph click={click} route_data={data[Object.keys(data)[0]]} />{" "}
           {/* you should pass data to child component with your own customized parameters */}
-          <RouteGraph route_data={data[Object.keys(data)[1]]} />{" "}
+          <RouteGraph click={click} route_data={data[Object.keys(data)[1]]} />{" "}
           {/* you should pass data to child component with your own customized parameters */}
-          <StationInfo />{" "}
+          <StationInfo A={A} B={B} C={C} D={D} />{" "}
           {/* you should pass data to child component with your own customized parameters */}
         </div>
       </div>

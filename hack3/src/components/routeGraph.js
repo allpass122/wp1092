@@ -13,7 +13,7 @@ function RouteGraph(props) {
         // coding here ...
         data.map((m) => (
           //console.log(m);
-          <Station data={m} />
+          <Station data={m} click={props.click} />
         ))
       }
     </div>
