@@ -11,10 +11,10 @@ function RouteGraph(props) {
         // generate many stations
         // use <Station /> with your own customized parameters
         // coding here ...
-        data.map((m) => {
+        data.map((m) => (
           //console.log(m);
-          <Station data={m} />;
-        })
+          <Station data={m} />
+        ))
       }
     </div>
   );
