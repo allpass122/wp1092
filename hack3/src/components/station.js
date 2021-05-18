@@ -14,17 +14,20 @@ function Station(props) {
   }`;
   let classname2 = `line ${mmm[data["station_id"][0]]}`;
 
+  const CC = () => {
+    props.click(
+      data["station_name"],
+      data["address"],
+      data["service_counter"],
+      data["enable_bicycle"]
+    );
+  };
   return (
     <div className="station-line-container">
       <div
         id={`s-${data["station_id"]}`}
         className="station-and-name"
-        onClick={props.click(
-          data["station_name"],
-          data["address"],
-          data["service_counter"],
-          data["enable_bicycle"]
-        )}
+        onClick={CC}
       >
         {/* you should add both id and onClick to attributes */}
 
