@@ -20,27 +20,27 @@ function StationInfo(props) {
           {
             // generate multiple
             <tr>
-              <td>{labels[0].label}</td>
-              <td>{labels[0].value}</td>
+              <td id="table-station_name-label">{labels[0].label}</td>
+              <td id="table-station_name-value">{labels[0].value}</td>
             </tr>
             // coding here ...
           }
           {
             <tr>
-              <td>{labels[1].label}</td>
-              <td>{labels[1].value}</td>
+              <td id="table-address-label">{labels[1].label}</td>
+              <td id="table-address-value">{labels[1].value}</td>
             </tr>
           }
           {
             <tr>
-              <td>{labels[2].label}</td>
-              <td>{labels[2].value}</td>
+              <td id="table-service_counter-label">{labels[2].label}</td>
+              <td id="table-service_counter-value">{labels[2].value}</td>
             </tr>
           }
           {
             <tr>
-              <td>{labels[3].label}</td>
-              <td>{labels[3].value}</td>
+              <td id="table-enable_bicycle-label">{labels[3].label}</td>
+              <td id="table-enable_bicycle-value">{labels[3].value}</td>
             </tr>
           }
         </tbody>
