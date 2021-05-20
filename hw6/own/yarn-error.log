@@ -1,0 +1,43 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/15.14.0/bin/node /opt/homebrew/Cellar/yarn/1.22.10/libexec/bin/yarn.js add mongoose dotenv-defaults —save
+
+PATH: 
+  /usr/local/mysql/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/opt/homebrew/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/usr/local/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/usr/local/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin:/opt/homebrew/opt/openssl@1.1/bin:/opt/homebrew/opt/icu4c/sbin:/opt/homebrew/opt/icu4c/bin:/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.14.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  TypeError [ERR_UNESCAPED_CHARACTERS]: Request path contains unescaped characters
+      at new NodeError (node:internal/errors:329:5)
+      at new ClientRequest (node:_http_client:167:13)
+      at Object.request (node:https:333:10)
+      at Request.module.exports.Request.start (/opt/homebrew/Cellar/yarn/1.22.10/libexec/lib/cli.js:141311:32)
+      at Request.module.exports.Request.end (/opt/homebrew/Cellar/yarn/1.22.10/libexec/lib/cli.js:142070:10)
+      at end (/opt/homebrew/Cellar/yarn/1.22.10/libexec/lib/cli.js:141124:14)
+      at Immediate._onImmediate (/opt/homebrew/Cellar/yarn/1.22.10/libexec/lib/cli.js:141138:7)
+      at processImmediate (node:internal/timers:464:21)
+
+npm manifest: 
+  {
+    "name": "chat-tmp",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "cd frontend && yarn start",
+      "server": "cd backend && yarn server"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
