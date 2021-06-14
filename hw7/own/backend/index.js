@@ -16,11 +16,11 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
   name: { type: String, required: true },
-  chatBoxes: [{ type: mongoose.Types.ObjectId, ref: "ChatBox" }],
+  // chatBoxes: [{ type: mongoose.Types.ObjectId, ref: "ChatBox" }],
 });
 
 const messageSchema = new Schema({
-  chatBox: { type: mongoose.Types.ObjectId, ref: "ChatBox" },
+  // chatBox: { type: mongoose.Types.ObjectId, ref: "ChatBox" },
   sender: { type: mongoose.Types.ObjectId, ref: "User" },
   body: { type: String, required: true },
 });
@@ -90,6 +90,7 @@ wss.on("connection", function connection(client) {
   client.sendEvent = (e) => client.send(JSON.stringify(e));
 
   client.on("message", async function incoming(message) {
+    // console.log("IN");
     message = JSON.parse(message);
 
     const { type } = message;
@@ -97,10 +98,11 @@ wss.on("connection", function connection(client) {
     switch (type) {
       // on open chat box
       case "CHAT": {
+        console.log("CHAT");
         const {
           data: { name, to },
         } = message;
-
+        console.log(name, to);
         const chatBoxName = makeName(name, to);
 
         const sender = await validateUser(name);
@@ -131,6 +133,8 @@ wss.on("connection", function connection(client) {
       }
 
       case "MESSAGE": {
+        console.log("MESSAGE");
+        console.log(message);
         const {
           data: { name, to, body },
         } = message;
@@ -170,6 +174,6 @@ wss.on("connection", function connection(client) {
 
 mongo.connect();
 
-server.listen(8080, () => {
-  console.log("Server listening at http://localhost:8080");
+server.listen(4000, () => {
+  console.log("Server listening at http://localhost:4000");
 });
