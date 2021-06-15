@@ -1,6 +1,6 @@
 const Query = {
   persons(parent, args, { db }, info) {
-    console.log(args);
+    // console.log(args);
     if (args.severity === null) {
       // console.log(args.severity);
       return db.people;

@@ -1,25 +1,35 @@
 const Mutation = {
   insertPeople(parent, args, { db }, info) {
-    console.log(args);
+    // console.log(args);
 
-    const { ssn, name, severity } = args;
+    const { ssn, name, severity } = args.data;
 
     const l_name = args.data.location.name;
     const l_des = args.data.location.description;
 
-    const user = db.people.find((user) => user.ssn === ssn);
-    console.log(user);
+    var user = db.people.find((user) => user.ssn === ssn);
+    console.log(user)
     if (user) {
-      user.name = name;
-      user.severity = severity;
-      user.location.name = l_name;
-      user.location.description = l_des;
+      if (typeof user.name === 'string'){
+        user.name = name;
+      }
+      if (typeof user.severity !== 'undefined'){
+        user.severity= severity;
+      }
+      if (typeof user.location.name === 'string'){
+              user.location.name = l_name;
+      }
+      if (typeof user.location.description === 'string'){
+              user.location.description = l_des;
+      }
+       
       return true;
     } else {
-      const user = {
+      const uuser = {
         ...args.data,
       };
-      db.people.push(user);
+      db.people.push(uuser);
+      return true;
     }
     return true;
   },
