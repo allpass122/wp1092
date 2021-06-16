@@ -1,2 +1,6 @@
-恩...這是份屍體...因為前面分數夠了加上期末比較忙。
-我只需要拿互評的分數就好，謝謝您。
+# 完成基本要求
+
+1. `sh install.sh` 來安裝node module
+2. open frontend (localhost:3000): `yarn start`
+3. open backend: `yarn server`
+非技術的美觀部分還請不要太挑惕, 感謝！！
