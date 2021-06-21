@@ -84,15 +84,12 @@ const validateChatBox = async (name, participants) => {
 const chatBoxes = {}; // keep track of all open AND active chat boxes
 
 wss.on('connection', function connection(client) {
-  console.log("connect client")
   client.id = uuid.v4();
   client.box = ''; // keep track of client's CURRENT chat box
 
   client.sendEvent = (e) => client.send(JSON.stringify(e));
 
   client.on('message', async function incoming(message) {
-    console.log("get");
-    console.log(message)
     message = JSON.parse(message);
 
     const { type } = message;
@@ -103,7 +100,6 @@ wss.on('connection', function connection(client) {
         const {
           data: { name, to },
         } = message;
-        console.log("CHAT");
 
         const chatBoxName = makeName(name, to);
 
@@ -124,7 +120,6 @@ wss.on('connection', function connection(client) {
         client.sendEvent({
           type: 'CHAT',
           data: {
-            boxname:chatBoxName,
             messages: chatBox.messages.map(({ sender: { name }, body }) => ({
               name,
               body,
@@ -136,11 +131,10 @@ wss.on('connection', function connection(client) {
       }
 
       case 'MESSAGE': {
-        console.log("Message");
         const {
           data: { name, to, body },
         } = message;
-        console.log(message);
+
         const chatBoxName = makeName(name, to);
 
         const sender = await validateUser(name);
