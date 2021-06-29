@@ -68,10 +68,10 @@
 
 ## Technique
 
-Frontend: react, javascripts, Material-UI, Css, html5
-Backend: nodeJS, express
-DB: mongoDB
-other: babel
+- Frontend: react, javascripts, Material-UI, Css, html5
+- Backend: nodeJS, express
+- DB: mongoDB
+- other: babel
 
 ## 專題製作心得
 
